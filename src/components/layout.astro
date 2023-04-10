@@ -1,6 +1,7 @@
 ---
 //Imports
 import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
 
 interface Props {
   title?: string;
@@ -29,5 +30,10 @@ const { title = "Intest | integrando estructuras" } = Astro.props;
     >
       <slot />
     </main>
+    <Footer title={title} email="juan@juan.com" phone="301554545" />
+    <script
+      src="https://kit.fontawesome.com/b48cc4861f.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
