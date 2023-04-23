@@ -35,5 +35,11 @@ const { title = "Intest | integrando estructuras" } = Astro.props;
       src="https://kit.fontawesome.com/b48cc4861f.js"
       crossorigin="anonymous"
     ></script>
+    <script is:global>
+      const header = document.querySelector(".header");
+      window?.addEventListener("scroll", (_) => {
+        header?.classList.toggle("sticky", window.scrollY > 150);
+      });
+    </script>
   </body>
 </html>

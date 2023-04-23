@@ -1,21 +1,40 @@
 ---
 ---
 
-<header class="top-0 sticky z-10 bg-white shadow-sm">
+<header class="top-0 z-10 bg-white shadow-sm header">
   <div class="container flex mx-auto p-6 justify-between">
     <a href="/">
       <img src="logo.svg" class="h-8" alt="intest" />
     </a>
     <nav>
-      <ul class="flex flex-row justify-end">
-        <li class="px-4 mr-4 text-center uppercase"><a href="/">Inicio</a></li>
-        <li class="px-4 mr-4 text-center uppercase">
-          <a href="#about">Sobre nosotros</a>
+      <ul class="flex flex-row justify-end line-clamp-1">
+        <li class="px-4 mr-4">
+          <a
+            href="/"
+            class="text-center leading-8 uppercase text-darkblue-300 hover:text-darkblue-200 font-be_vietnam_pro font-semibold"
+            >Inicio</a
+          >
         </li>
-        <li class="px-4 text-center uppercase">
-          <a href="#contact">Contacto</a>
+        <li class="px-4 mr-4">
+          <a
+            href="#about"
+            class="text-center leading-8 uppercase text-darkblue-300 hover:text-darkblue-200 font-be_vietnam_pro font-semibold"
+            >Blog</a
+          >
+        </li>
+        <li class="px-4">
+          <a
+            href="#contact"
+            class="text-center leading-8 uppercase text-darkblue-300 hover:text-darkblue-200 font-be_vietnam_pro font-semibold"
+            >Contacto</a
+          >
         </li>
       </ul>
     </nav>
   </div>
 </header>
+<style>
+  .header {
+    animation: 800ms ease-in-out 0s normal none 1 running slideInDown;
+  }
+</style>
