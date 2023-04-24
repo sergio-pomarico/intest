@@ -1,12 +1,15 @@
----
----
-
 <header class="top-0 z-10 bg-white shadow-sm header">
   <div class="container flex mx-auto p-6 justify-between">
     <a href="/">
       <img src="logo.svg" class="h-8" alt="intest" />
     </a>
-    <nav>
+    <button
+      id="open-button"
+      class="md:hidden text-3xl cursor-pointer hover:text-darkblue-200"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav aria-label="main" class="hidden md:flex">
       <ul class="flex flex-row justify-end line-clamp-1">
         <li class="px-4 mr-4">
           <a
@@ -33,8 +36,67 @@
     </nav>
   </div>
 </header>
+<section
+  aria-label="mobile"
+  id="menu-mobile"
+  class="hidden top-0 w-full z-10 bg-darkblue-300 justify-center origin-top animatate-open-menu"
+>
+  <div class="flex flex-col">
+    <button
+      class="text-5xl cursor-pointer text-gray-300 hover:text-white self-end p-4"
+      id="close-button"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <nav class="flex justify-center menu-mobile py-28">
+      <ul class="text-4xl text-center font-bold font-be_vietnam_pro">
+        <li class="my-4">
+          <a
+            href="/"
+            class="leading-8 uppercase text-gray-300 hover:text-white"
+          >
+            Inicio
+          </a>
+        </li>
+        <li class="my-4">
+          <a
+            href="#about"
+            class="leading-8 uppercase text-gray-300 hover:text-white"
+          >
+            Blog
+          </a>
+        </li>
+        <li class="my-4">
+          <a
+            href="#contact"
+            class="leading-8 uppercase text-gray-300 hover:text-white"
+          >
+            Contacto
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
 <style>
-  .header {
+  .h-sticky {
+    position: sticky;
     animation: 800ms ease-in-out 0s normal none 1 running slideInDown;
+  }
+
+  .menu-mobile {
+    height: calc(100vh - 4.25rem);
+  }
+
+  @keyframes slideInDown {
+    from {
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+      visibility: visible;
+    }
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
   }
 </style>
