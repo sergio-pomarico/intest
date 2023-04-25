@@ -3,12 +3,14 @@
     <a href="/">
       <img src="logo.svg" class="h-8" alt="intest" />
     </a>
-    <button
+    <a
       id="open-button"
-      class="md:hidden text-3xl cursor-pointer hover:text-darkblue-200"
+      class="md:hidden cursor-pointer hover:text-darkblue-200 flex justify-center items-center h-8 w-8 z-11"
     >
-      <i class="fa-solid fa-bars"></i>
-    </button>
+      <span
+        class="block relative h-0.5 bg-darkblue-300 w-8 after:absolute after:rounded after:w-full after:h-full after:-translate-y-2.5 after:bg-darkblue-300 before:bg-darkblue-300 before:absolute before:rounded before:w-full before:h-full before:translate-y-2.5"
+      ></span>
+    </a>
     <nav aria-label="main" class="hidden md:flex">
       <ul class="flex flex-row justify-end line-clamp-1">
         <li class="px-4 mr-4">
@@ -39,7 +41,7 @@
 <section
   aria-label="mobile"
   id="menu-mobile"
-  class="hidden top-0 w-full z-10 bg-darkblue-300 justify-center origin-top animatate-open-menu"
+  class="fixed top-0 w-full bg-darkblue-300 justify-center menu z-20"
 >
   <div class="flex flex-col">
     <button
@@ -48,8 +50,8 @@
     >
       <i class="fa-solid fa-xmark"></i>
     </button>
-    <nav class="flex justify-center menu-mobile py-28">
-      <ul class="text-4xl text-center font-bold font-be_vietnam_pro">
+    <nav class="flex justify-center nav py-28">
+      <ul class="w-full text-4xl text-center font-bold font-be_vietnam_pro">
         <li class="my-4">
           <a
             href="/"
@@ -84,8 +86,22 @@
     animation: 800ms ease-in-out 0s normal none 1 running slideInDown;
   }
 
-  .menu-mobile {
+  .nav {
     height: calc(100vh - 4.25rem);
+  }
+
+  .menu {
+    clip-path: circle(200px at top right);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 800ms 500ms, clip-path 1000ms 500ms,
+      visibility 200ms 800ms;
+  }
+
+  .active {
+    clip-path: circle(100% at center);
+    opacity: 1;
+    visibility: visible;
   }
 
   @keyframes slideInDown {

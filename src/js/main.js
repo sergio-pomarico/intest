@@ -22,8 +22,7 @@ class App {
   }
 
   toggleMenu() {
-    this.menuMobile?.classList.toggle("hidden");
-    this.menuMobile?.classList.toggle("fixed");
+    this.menuMobile?.classList.toggle("active");
   }
 }
 
