@@ -1,6 +1,6 @@
 class App {
   constructor() {
-    this.openButton = document.getElementById("open-button");
+    this.openButton = document.getElementById("menu-button");
     this.closeButton = document.getElementById("close-button");
     this.menuMobile = document.getElementById("menu-mobile");
     this.header = document.querySelector(".header");
@@ -22,7 +22,7 @@ class App {
   }
 
   toggleMenu() {
-    this.menuMobile?.classList.toggle("active");
+    this.menuMobile?.classList.toggle("menu-active");
   }
 }
 
