@@ -1,0 +1,63 @@
+---
+interface Props {
+  phone: string;
+}
+
+const { phone } = Astro.props;
+---
+
+<section
+  class="relative pt-20 pb-16 before:w-full before:h-full before:absolute before:top-0 before:left-0 before:-z-10 pointer-events-none mb-8 video"
+>
+  <div
+    class="absolute -z-20 inset-0 overflow-hidden bg-no-repeat bg-cover bg-transparent bg-image"
+  >
+    <video
+      autoplay
+      loop
+      muted
+      src="video.mp4"
+      class="m-auto absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 visible w-full h-auto"
+    ></video>
+  </div>
+  <div
+    class="flex flex-col items-center h-full justify-center text-center z-20 px-6 opacity-100 py-16 lg:py-32"
+  >
+    <h2
+      class="font-be_vietnam_pro font-bold text-3xl lg:text-6xl text-white mb-8"
+    >
+      ESTRUCTUREMOS
+      <br />EL FUTURO
+    </h2>
+    <p class="font-be_vietnam_pro text-white text-lg lg:text-2xl mb-8">
+      Desarrollamos y diseñamos estructuras <br /> llenas de integridad y detalle.
+    </p>
+    <a
+      href={`tel:${phone}`}
+      class="bg-darkblue-300 text-lg px-5 py-3 inline-block font-be_vietnam_pro text-gray-200 font-bold rounded-md cursor-pointer"
+      >Contáctanos</a
+    >
+  </div>
+
+  <style>
+    .video {
+      min-height: calc(100vh - 160px);
+    }
+    .video::before {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .video > div {
+      background-image: none;
+      background-position: 50% 50%;
+    }
+    p {
+      color: white;
+    }
+    @media (max-width: 768px) {
+      .video video {
+        height: calc(100vh - 160px);
+        object-fit: cover;
+      }
+    }
+  </style>
+</section>
