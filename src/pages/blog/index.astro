@@ -1,0 +1,21 @@
+---
+import Layout from "../../components/layout.astro";
+import Post from "../../components/post.astro";
+const posts = await Astro.glob("../blog/*.md");
+---
+
+<Layout>
+  <h1>Blog</h1>
+  {
+    posts.map((post) => (
+      <a href={post.url}>
+        <Post
+          title={post.frontmatter.title}
+          author={post.frontmatter.author}
+          image={post.frontmatter.image.url}
+          pubDate={post.frontmatter.pubDate}
+        />
+      </a>
+    ))
+  }
+</Layout>
