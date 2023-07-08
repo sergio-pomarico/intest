@@ -2,7 +2,7 @@
 layout: ../../components/layout.astro
 title: Mi primer blog
 author: Juan Mario Guevara
-description: "Mi primer blog"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget fringilla metus. Nullam in eleifend sapien. Suspendisse potenti."
 pubDate: 2022-08-08
 image:
   url: "https://docs.astro.build/default-og-image.png"

@@ -5,17 +5,17 @@ const posts = await Astro.glob("../blog/*.md");
 ---
 
 <Layout>
-  <h1>Blog</h1>
-  {
-    posts.map((post) => (
-      <a href={post.url}>
+  <section class="grid grid-cols-1 sm:grid-cols-3 gap-24 my-20">
+    {
+      posts.map((post) => (
         <Post
           title={post.frontmatter.title}
           author={post.frontmatter.author}
           image={post.frontmatter.image.url}
           pubDate={post.frontmatter.pubDate}
+          description={post.frontmatter.description}
         />
-      </a>
-    ))
-  }
+      ))
+    }
+  </section>
 </Layout>

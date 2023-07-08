@@ -4,13 +4,35 @@ interface Props {
   author: string;
   pubDate: Date;
   image: string;
+  description: string;
 }
 
-const { title, author, pubDate, image } = Astro.props;
+const { title, author, pubDate, image, description } = Astro.props;
+const date = new Date(pubDate).toLocaleString("es-CO").split(",")[0];
 ---
 
 <article>
-  <h3>{title}</h3>
-  <span>{author}</span>
-  <date>{pubDate}</date>
+  <a
+    href="#"
+    class="block relative before:bg-gray-500 before:w-full before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:ease-in hover:before:opacity-40 duration-700"
+  >
+    <img
+      src={image}
+      alt={title}
+      class="overflow-hidden object-cover object-center"
+    />
+  </a>
+  <div class="bg-white p-6 border-gray-200 border-1">
+    <h3
+      class="font-be_vietnam_pro font-bold uppercase mb-2 text-gray-700 text-xl hover:text-darkblue-200 cursor-pointer transition hover:ease-in duration-700"
+    >
+      {title}
+    </h3>
+    <p class="flex flex-row mb-4">
+      <span class="font-be_vietnam_pro text-gray-600">{author}</span>
+      &nbsp&nbsp;-&nbsp&nbsp;
+      <date class="font-be_vietnam_pro text-gray-600">{date}</date>
+    </p>
+    <p class="font-be_vietnam_pro text-sm text-gray-600">{description}</p>
+  </div>
 </article>
