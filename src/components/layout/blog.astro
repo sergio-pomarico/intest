@@ -1,17 +1,10 @@
 ---
 //Imports
-import Header from "../components/header.astro";
-import Hero from "./hero.astro";
-import Banner from "./banner.astro";
-import Footer from "../components/footer.astro";
+import Header from "../header.astro";
+import Footer from "../footer.astro";
 
-interface Props {
-  title?: string;
-  isHome?: boolean;
-}
-
-const { title = "Intest | integrando estructuras", isHome = false } =
-  Astro.props;
+const { frontmatter } = Astro.props;
+const { title, description, image } = frontmatter;
 ---
 
 <html lang="es">
@@ -20,6 +13,7 @@ const { title = "Intest | integrando estructuras", isHome = false } =
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
+    <meta name="description" content={description} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,11 +23,8 @@ const { title = "Intest | integrando estructuras", isHome = false } =
   </head>
   <body class="min-h-screen bg-slate-50">
     <Header />
-    {isHome && <Hero />}
-    {!isHome && <Banner />}
-    <main
-      class="container mx-auto p-4 font-be_vietnam_pro font-normal text-gray-600"
-    >
+    <img src={image.url} alt={title} />
+    <main class="container mx-auto p-4">
       <slot />
     </main>
     <Footer title={title} email="juan@juan.com" phone="301554545" />
@@ -41,6 +32,6 @@ const { title = "Intest | integrando estructuras", isHome = false } =
       src="https://kit.fontawesome.com/b48cc4861f.js"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/main.js"></script>
+    <script src="../../js/main.js"></script>
   </body>
 </html>

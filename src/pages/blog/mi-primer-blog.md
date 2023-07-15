@@ -1,5 +1,5 @@
 ---
-layout: ../../components/layout.astro
+layout: ../../components/layout/blog.astro
 title: Mi primer blog
 author: Juan Mario Guevara
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget fringilla metus. Nullam in eleifend sapien. Suspendisse potenti."

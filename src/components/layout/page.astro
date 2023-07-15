@@ -1,0 +1,36 @@
+---
+//Imports
+import Header from "../header.astro";
+import Footer from "../footer.astro";
+
+interface Props {
+  title?: string;
+}
+
+const { title = "Intest | integrando estructuras" } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen bg-slate-50">
+    <Header />
+    <slot />
+    <Footer title={title} email="juan@juan.com" phone="301554545" />
+    <script
+      src="https://kit.fontawesome.com/b48cc4861f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

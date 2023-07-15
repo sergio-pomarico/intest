@@ -1,8 +1,12 @@
 ---
-import Layout from "../components/layout.astro";
+import Layout from "../components/layout/page.astro";
+import Hero from "../components/hero.astro";
 import Services from "../components/services.astro";
+import Counting from "../components/counting.astro";
 ---
 
-<Layout isHome>
+<Layout>
+  <Hero />
+  <Counting />
   <Services />
 </Layout>
